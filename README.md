@@ -1,16 +1,14 @@
-# devfest_munich
+# DevFest Munich 2023 Flutter Workshop starter code
 
-A new Flutter project.
+We will begin from this simple code where we have a simple API call bound to a UI, using cubit as state management. We
+will build a nice architecture with the same API call in the same code.
 
-## Getting Started
+## Preparations
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- A working Flutter setup on personal laptops. Attendees will be asked to clone this repo and work along with the
+  speaker
+- Some basic knowledge of Flutter would be great because there will be some parts where the speaker expects the audience
+  to implicitly grasp things without deep explanations
+- Attendees who will not have a personal laptop or are beginners in Flutter will also be able to attend this, it
+  wouldn't be a definite MUST to follow the speaker throughout, grasping concepts & carrying it out later would also
+  work. 
