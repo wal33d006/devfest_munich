@@ -1,19 +1,19 @@
-import 'dart:convert';
-
+import 'package:devfest_munich/fetch_users_use_case.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:devfest_munich/user_json.dart';
 import 'package:devfest_munich/users_list_state.dart';
-import 'package:http/http.dart' as http;
 
 class UsersListCubit extends Cubit<UsersListState> {
-  UsersListCubit() : super(UsersListState.empty());
+  final FetchUsersUseCase _fetchUsersUseCase;
+
+  UsersListCubit(this._fetchUsersUseCase) : super(UsersListState.empty());
 
   Future<void> fetchUsers() async {
     emit(state.copyWith(isLoading: true));
-    var url = Uri.parse('https://jsonplaceholder.typicode.com/users');
-    var response = await http.get(url);
-    var list = jsonDecode(response.body) as List;
-    final users = list.map((e) => UserJson.fromJson(e)).toList();
-    emit(state.copyWith(users: users, isLoading: false));
+
+    final users = await _fetchUsersUseCase.execute();
+    users.fold(
+      (l) => null,
+      (r) => emit(state.copyWith(users: r, isLoading: false)),
+    );
   }
 }

@@ -1,12 +1,21 @@
 import 'package:devfest_munich/users_list_cubit.dart';
 import 'package:devfest_munich/users_list_page.dart';
+import 'package:devfest_munich/users_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
+
+final getIt = GetIt.instance;
 
 void main() async {
+  getIt.registerSingleton<UsersRepository>(RestApiUsersRepository());
   runApp(
     MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => UsersListCubit()..fetchUsers())],
+      providers: [
+        BlocProvider(
+          create: (context) => UsersListCubit(getIt())..fetchUsers(),
+        ),
+      ],
       child: const MyApp(),
     ),
   );

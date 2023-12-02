@@ -1,8 +1,7 @@
-
-import 'package:devfest_munich/user_json.dart';
+import 'package:devfest_munich/entities/user.dart';
 
 class UsersListState {
-  final List<UserJson> users;
+  final List<User> users;
   final bool isLoading;
 
   const UsersListState({required this.users, required this.isLoading});
@@ -13,7 +12,7 @@ class UsersListState {
       );
 
   UsersListState copyWith({
-    List<UserJson>? users,
+    List<User>? users,
     bool? isLoading,
   }) =>
       UsersListState(

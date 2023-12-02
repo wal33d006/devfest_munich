@@ -1,3 +1,5 @@
+import 'package:devfest_munich/entities/user.dart';
+
 class UserJson {
   final int id;
   final String name;
@@ -23,4 +25,15 @@ class UserJson {
         phone: json['phone'],
         website: json['website'],
       );
+
+  User toDomain() {
+    return User(
+      id: id,
+      name: name,
+      username: username,
+      email: email,
+      phone: phone,
+      website: website,
+    );
+  }
 }

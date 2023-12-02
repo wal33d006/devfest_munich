@@ -1,8 +1,9 @@
+import 'package:devfest_munich/entities/user.dart';
 import 'package:flutter/material.dart';
 import 'package:devfest_munich/user_json.dart';
 
 class UserCard extends StatelessWidget {
-  final UserJson user;
+  final User user;
 
   const UserCard({
     Key? key,
